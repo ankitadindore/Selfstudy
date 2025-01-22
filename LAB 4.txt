@@ -1,0 +1,86 @@
+package com.demo;
+
+public class TypeCasting {
+
+	public static void main(String[] args) {
+		
+	    int intValue = 100;
+	    double doubleValue = intValue;
+	    System.out.println("Type Casting: int to double = " + doubleValue);
+
+	    
+	    double doubleValue2 = 100.99;
+	    int intValue2 = (int) doubleValue2;
+	    System.out.println(" Type Casting: double to int = " + intValue2);
+
+	    
+	    char charValue = 'A';
+	    int intValue3 = charValue;
+	    System.out.println("Type Casting: char to int = " + intValue3);
+
+	    
+	    int intValue4 = 65;
+	    char charValue2 = (char) intValue4;
+	    System.out.println(" Type Casting: int to char = " + charValue2);
+	  }
+	}
+
+
+OUTPUT:
+Type Casting: int to double = 100.0
+ Type Casting: double to int = 100
+Type Casting: char to int = 65
+ Type Casting: int to char = A
+
+
+
+
+
+
+package com.demo;
+
+public class StaticVariableDemo {
+	// Static variable
+	  static int staticVariable = 10;
+
+	  // Instance variable
+	  int instanceVariable = 20;
+
+	  public void localVariableDemo() {
+	    // Local variable
+	    int localVariable = 30;
+	    System.out.println("Local Variable: " + localVariable);
+	  }
+
+	  public void instanceVariableDemo() {
+	    System.out.println("Instance Variable: " + instanceVariable);
+	  }
+
+	  public static void staticVariableDemo() {
+	    System.out.println("Static Variable: " + staticVariable);
+	  }
+
+	  public static void main(String[] args) {
+	    StaticVariableDemo obj = new StaticVariableDemo();
+
+	    System.out.println("Accessing Local Variable:");
+	    obj.localVariableDemo();
+
+	    System.out.println("\nAccessing Instance Variable:");
+	    obj.instanceVariableDemo();
+
+	    System.out.println("\nAccessing Static Variable:");
+	    StaticVariableDemo.staticVariableDemo();
+	  }
+	}
+
+
+OUTPUT:
+Accessing Local Variable:
+Local Variable: 30
+
+Accessing Instance Variable:
+Instance Variable: 20
+
+Accessing Static Variable:
+Static Variable: 10
