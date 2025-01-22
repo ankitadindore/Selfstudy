@@ -1,0 +1,112 @@
+
+
+
+
+package com.demo;
+
+public class MiniCalculator {
+
+	public static void main(String[] args) {
+
+		 int num1 = 10;
+		 int num2 = 5;
+		 
+        
+		 System.out.println("Addition: " + (num1 + num2));
+		 System.out.println("Subtraction: " + (num1 - num2));
+		 System.out.println("Multiplication: " + (num1 * num2));
+		 System.out.println("Division: " + (num1 / num2));
+	}
+
+	}
+
+
+OUTPUT:
+Addition: 15
+Subtraction: 5
+Multiplication: 50
+Division: 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package com.demo;
+
+public class Banking {
+    public static void main(String[] args) {
+        int account_no = 77682457;
+        String account_holder_name = "Akash Gangade";
+        double initial_amount = 59000.00;
+        double deposit_amount = 1200.00;
+        double withdrawl_amount = 1000.00;
+        double result;
+
+        System.out.println("Account number ");
+        System.out.println(account_no);
+        System.out.println("Name of Account holder");
+        System.out.println(account_holder_name);
+        System.out.println("Initial amount in account");
+        System.out.println(initial_amount);
+        System.out.println("---------------------------");
+        System.out.println("Deposit Operation : ");
+        result = initial_amount + deposit_amount;
+        System.out.println("Amount Deposited");
+        System.out.println(result);
+        System.out.println("-------------------------------");
+        System.out.println("Withdrawl Operation : ");
+        result = result - withdrawl_amount;
+        System.out.println("Amount Withdrawn");
+        System.out.println(result);
+        System.out.println("-------------------------------------");
+        System.out.println("Printing Final Balance: ");
+        System.out.println(result);
+    }
+}
+
+
+OUTPUT
+Account number 
+77682457
+Name of Account holder
+Akash Gangade
+Initial amount in account
+59000.0
+---------------------------
+Deposit Operation : 
+Amount Deposited
+60200.0
+-------------------------------
+Withdrawl Operation : 
+Amount Withdrawn
+59200.0
+-------------------------------------
+Printing Final Balance: 
+59200.0
+
+
+
+
+
+
+
