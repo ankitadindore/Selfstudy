@@ -1,0 +1,32 @@
+package com.demo;
+
+public class Banking {
+    public static void main(String[] args) {
+        int account_no = 77682457;
+        String account_holder_name = "Akash Gangade";
+        double initial_amount = 59000.00;
+        double deposit_amount = 1200.00;
+        double withdrawl_amount = 1000.00;
+        double result;
+
+        System.out.println("Account number ");
+        System.out.println(account_no);
+        System.out.println("Name of Account holder");
+        System.out.println(account_holder_name);
+        System.out.println("Initial amount in account");
+        System.out.println(initial_amount);
+        System.out.println("---------------------------");
+        System.out.println("Deposit Operation : ");
+        result = initial_amount + deposit_amount;
+        System.out.println("Amount Deposited");
+        System.out.println(result);
+        System.out.println("-------------------------------");
+        System.out.println("Withdrawl Operation : ");
+        result = result - withdrawl_amount;
+        System.out.println("Amount Withdrawn");
+        System.out.println(result);
+        System.out.println("-------------------------------------");
+        System.out.println("Printing Final Balance: ");
+        System.out.println(result);
+    }
+}
