@@ -1,0 +1,86 @@
+package com.demo;
+
+public class LeapyearChecking {
+	public static void main(String[] args) {
+		int year = 1044;
+		boolean leap = false;
+		
+		if (year % 4 == 0) {
+			
+			if (year % 100 == 0) 
+			{
+				if (year % 400 == 0)
+					leap = true;
+				else
+					leap = false;
+				}
+			else
+				leap = true;
+			    }
+		
+		else
+			leap = false;
+		
+		
+		if (leap)
+			System.out.println(year + " is a leap year");
+		
+		else
+			System.out.println(year + " is not a leap year");
+			  }
+	}
+
+
+OUTPUT:
+
+1044 is a leap year
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package com.demo;
+
+public class Reverse {
+	public static void main(String[] args) {
+
+	    int num = 7432, reversed = 0;
+	    
+	    System.out.println("Original Number: " + num);
+
+	    // runs loop until num becomes 0
+	    while(num != 0) {
+	    
+	      int digit = num % 10;
+	      reversed = reversed * 10 + digit;
+
+	      num /= 10;
+	    }
+
+	    System.out.println("Reversed Number: " + reversed);
+	  }
+
+}
+
+
+OUTPUT:
+
+Original Number: 7432
+Reversed Number: 2347
