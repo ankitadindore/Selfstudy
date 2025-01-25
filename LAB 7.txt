@@ -1,0 +1,61 @@
+package com.demo;
+
+public class Greatestnum {
+
+	public static void main(String[] args)
+	{
+		int num1, num2, num3;
+		num1 = 1214;
+		num2 = 2588;
+		num3 = 1545;
+		
+		if((num1 > num2) & (num1 > num3))
+		{
+			System.out.println("Greatest num:" + num1);
+		}
+		if((num2 > num1) & (num2 > num3))
+		{
+			System.out.println("Greatest num:" + num2);
+		}if((num3 > num1) & (num3 > num2))
+		{
+			System.out.println("Greatest num:" + num3);
+		}	
+		
+	}
+
+}
+
+
+OUTPUT:
+Greatest number:2588
+
+
+
+
+package com.demo;
+
+public class Armstrong {
+
+	    public static void main(String[] args) {
+
+	        int number = 3274, originalNumber, remainder, result = 0;
+
+	        originalNumber = number;
+
+	        while (originalNumber != 0)
+	        {
+	            remainder = originalNumber % 10;
+	            result += Math.pow(remainder, 3);
+	            originalNumber /= 10;
+	        }
+
+	        if(result == number)
+	            System.out.println(number + "  Armstrong number");
+	        else
+	            System.out.println(number + " not an Armstrong number");
+	    }
+	}
+
+OUTPUT:
+
+3274 not an Armstrong number
