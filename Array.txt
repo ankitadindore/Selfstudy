@@ -1,0 +1,31 @@
+package com.demo;
+
+public class Arraydemo2 {
+
+	public static void main(String[] args) 
+	{
+		int demo[] = new int[5];
+		
+		demo[0] = 11;
+		demo[1] = 12;
+		demo[2] = 13;
+		demo[3] = 14;
+		demo[4] = 15;
+		
+		 System.out.println("first index : "+ demo[0]); // first index
+	     System.out.println("last index : "+ demo[4]);    // last index
+
+	     int example[][] = new int[2][2];       // two-dimensional array
+	        
+	     example[0][0] = 101;
+	     example[1][1] = 104;
+	        
+	     System.out.println("first index : "+ example[0][0]); // first index
+	     System.out.println("last index : "+ example[1][1]);    // last index
+	     
+	     System.out.println("missing index : "+ example[0][1]); // first index
+	     System.out.println("last index : "+ example[1][0]);    // last index
+	}
+	
+
+}
