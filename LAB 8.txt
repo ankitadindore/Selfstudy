@@ -1,0 +1,70 @@
+package com.demo;
+
+public class BreakContinue {
+	public static void main(String[] args)
+    {
+        // loop run from 0-9
+        for (int i = 0; i < 10; i++) {
+            // Terminates the loop when i is 5
+            if (i == 5)
+                break;
+            System.out.println(" " + i);
+        }
+        System.out.println("");
+        for (int i = 0; i < 10; i++) {
+            
+            if (i == 5)
+                continue;
+ 
+            System.out.print(i + " ");
+        }
+    }
+
+}
+
+OUTPUT:
+
+ 0
+ 1
+ 2
+ 3
+ 4
+
+0 1 2 3 4 6 7 8 9 
+
+
+
+
+
+
+
+
+
+
+package com.demo;
+
+public class StarPattern {
+  public static void main(String[] args) {
+    int row = 4;
+    for (int i = 0; i < row; i++) {
+      for (int j = row - i; j > 1; j--) {
+        System.out.print(" ");
+      }
+      for (int j = 0; j <= i; j++) {
+        System.out.print("* ");
+      }
+      System.out.println();
+    }
+  }
+}
+ 
+
+
+
+OUTPUT:
+
+   * 
+  * * 
+ * * * 
+* * * * 
+
