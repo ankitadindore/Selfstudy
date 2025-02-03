@@ -1,0 +1,109 @@
+public interface BankAccount {
+    void deposit(double amount);
+    void withdraw(double amount);
+}
+
+
+public class CheckingAccount implements BankAccount {
+    private double balance;
+
+    public CheckingAccount() {
+        this.balance = 0;
+    }
+
+    
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposited: " + amount);
+        System.out.println("New Balance: " + balance);
+    }
+
+    
+    public void withdraw(double amount) {
+        if (balance >= amount) {
+            balance -= amount;
+            System.out.println("Withdrawn: " + amount);
+            System.out.println("New Balance: " + balance);
+        } else {
+            System.out.println("Insufficient funds.");
+        }
+    }
+}
+
+
+
+
+public class Main {
+    public static void main(String[] args) {
+        CheckingAccount account = new CheckingAccount();
+        account.deposit(1000);
+        account.withdraw(500);
+        account.withdraw(600);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public interface Resizable {
+    void resizeWidth(int width);
+    void resizeHeight(int height);
+}
+
+
+
+
+public class Rectangle implements Resizable {
+    private int width;
+    private int height;
+
+    public Rectangle(int width, int height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    
+    public void resizeWidth(int width) {
+        this.width = width;
+        System.out.println("Width resized to: " + width);
+    }
+
+    
+    public void resizeHeight(int height) {
+        this.height = height;
+        System.out.println("Height resized to: " + height);
+    }
+
+    public void printDimensions() {
+        System.out.println("Width: " + width + ", Height: " + height);
+    }
+}
+
+
+
+
+public class Main {
+    public static void main(String[] args) {
+        Rectangle rectangle = new Rectangle(10, 20);
+        rectangle.printDimensions();
+
+        rectangle.resizeWidth(15);
+        rectangle.resizeHeight(25);
+
+        rectangle.printDimensions();
+    }
+}
