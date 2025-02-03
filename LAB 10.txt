@@ -1,0 +1,85 @@
+package com.demo;
+
+public class Student {
+    private String name;
+    private int rollNumber;
+    private long phoneNumber;
+    private String address;
+
+    public Student(String name, int rollNumber, long phoneNumber, String address) {
+        this.name = name;
+        this.rollNumber = rollNumber;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+    }
+
+    public void printDetails() {
+        System.out.println("Name:- " + name);
+        System.out.println("Roll Number:- " + rollNumber);
+        System.out.println("Phone Number:- " + phoneNumber);
+        System.out.println("Address:- " + address);
+    }
+
+    public static void main(String[] args) {
+        Student student1 = new Student("Sam", 1, 1235454890, "Solapur");
+        Student student2 = new Student("John", 2, 5452443210L, "Kolhapur");
+
+        System.out.println("Student 1 Details:-");
+        student1.printDetails();
+
+        System.out.println("\nStudent 2 Details:-");
+        student2.printDetails();
+    }
+}
+
+
+
+
+OUTPUT:
+Student 1 Details:-
+Name:- Sam
+Roll Number:- 1
+Phone Number:- 1235454890
+Address:- Solapur
+
+Student 2 Details:-
+Name:- John
+Roll Number:- 2
+Phone Number:- 5452443210
+Address:- Kolhapur
+
+
+
+
+
+
+package com.demo;
+
+import java.util.Scanner;
+
+public class Averageof3 {
+    public static void main(String[] args) {
+       Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        double num1 = scanner.nextDouble();
+
+        System.out.print("Enter second number: ");
+        double num2 = scanner.nextDouble();
+
+        System.out.print("Enter third number: ");
+        double num3 = scanner.nextDouble();
+
+        double average = (num1 + num2 + num3) / 3;
+
+        System.out.println("The average is: " + average);
+    }
+}
+
+
+OUTPUT:
+
+Enter first number: 78
+Enter second number: 65
+Enter third number: 69
+The average is: 70.66666666666667
