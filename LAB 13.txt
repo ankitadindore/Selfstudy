@@ -1,0 +1,86 @@
+package DemoLABS;
+
+class Overload
+{
+	void area (int l, int b)
+	{
+		System.out.println("The area of Rectangle is"+ (l*b));
+	}
+	void area (int l)
+	{
+		System.out.println("The area of Square is"+ (l*l));
+	}
+	void area (float pi, int r)
+	{
+		System.out.println("The area of Circle is"+ (3.14*r*r));
+	}
+}
+
+public class AreaOverloading {
+
+	public static void main(String[] args) 
+	{
+		Overload obj = new Overload();
+		obj.area(10);
+		obj.area(10, 20);
+		obj.area(22/7, 4);
+		
+		
+
+	}
+
+}
+
+
+OUTPUT
+The area of Square is100
+The area of Rectangle is200
+The area of Circle is12
+
+
+
+
+
+
+
+
+
+
+
+
+
+package DemoLABS;
+
+import java.util.Scanner;
+
+public class Employee {
+    public static void main(String args[]) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter Employee Code: ");
+        String empCode = in.nextLine();
+        System.out.print("Enter Annual Salary: ");
+        double s = in.nextDouble();
+        System.out.print("Enter Deductible Annual Savings: ");
+        double d = in.nextDouble();
+        double ti = s - d;
+        int r = 0;
+        if (ti <= 200000) r = 0;
+        else if (ti <= 500000) r = 10;
+        else if (ti <= 1000000) r = 20;
+        else r = 30;
+        double tax = ti * r / 100;
+        System.out.println("Employee Code: " + empCode);
+        System.out.println("Taxable Income: " + ti);
+        System.out.println("Income Tax: " + tax); 
+    }
+}
+
+
+
+OUTPUT
+Enter Employee Code: 33
+Enter Annual Salary: 268999
+Enter Deductible Annual Savings: 55576
+Employee Code: 33
+Taxable Income: 213423.0
+Income Tax: 21342.3
