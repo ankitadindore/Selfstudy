@@ -1,0 +1,54 @@
+package com.demo;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class BufferReading {
+
+    public static void main(String[] args) {
+        try (FileReader in = new FileReader("C:/test.txt");
+             BufferedReader br = new BufferedReader(in)) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+package com.demo;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class BufferWriting {
+
+    public static void main(String[] args) {
+        try (FileWriter out = new FileWriter("C:/test.txt");
+             BufferedWriter bw = new BufferedWriter(out)) {
+            bw.write("Hello, World!");
+            bw.newLine();
+            bw.write("This is a test file.");
+            bw.newLine();
+            bw.write("BufferedWriter is used to write to a file.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
