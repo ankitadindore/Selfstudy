@@ -1,0 +1,105 @@
+package DemoLABS;
+
+package StudentDetails;
+
+class StudentDetails {
+    String name;
+    int age;
+
+    StudentDetails(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    void displayDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+
+class Address {
+    String street;
+    String city;
+
+    Address(String street, String city) {
+        this.street = street;
+        this.city = city;
+    }
+
+    void displayAddress() {
+        System.out.println("Street: " + street);
+        System.out.println("City: " + city);
+    }
+}
+
+class Student {
+    String universityName;
+    String major;
+
+    Student(String universityName, String major) {
+        this.universityName = universityName;
+        this.major = major;
+    }
+
+    void displayStudentInfo() {
+        System.out.println("University Name: " + universityName);
+        System.out.println("Major: " + major);
+    }
+}
+
+public class person {
+    public static void main(String[] args) {
+        StudentDetails studentDetails = new StudentDetails("Akash Joshi", 44);
+        Address address = new Address("123 Maharashtra ", "Washingtown");
+        Student student = new Student("Solapur University", "Electronics");
+
+        studentDetails.displayDetails();
+        address.displayAddress();
+        student.displayStudentInfo();
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package DemoLABS;
+
+class PersonalDetails {
+    String name;
+    int age;
+
+    PersonalDetails(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    void displayDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+
+public class Employee {
+    public static void main(String[] args) {
+        PersonalDetails personalDetails = new PersonalDetails("John Doe", 30);
+        personalDetails.displayDetails();
+
+        PersonalDetails personalDetails2 = new PersonalDetails(null, 0);
+        personalDetails2.displayDetails();
+    }
+}
+
