@@ -1,0 +1,97 @@
+class BankAccount {
+    private int balance;
+
+    public BankAccount(int initialBalance) {
+        this.balance = initialBalance;
+    }
+
+    public void deposit(int amount) {
+        balance += amount;
+        System.out.println("Deposited: " + amount + ", New Balance: " + balance);
+    }
+
+    public void withdraw(int amount) {
+        if (balance >= amount) {
+            balance -= amount;
+            System.out.println("Withdrawn: " + amount + ", New Balance: " + balance);
+        } else {
+            System.out.println("Insufficient funds");
+        }
+    }
+}
+
+public class BankAccountDemo {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount(1000);
+        account.deposit(500);
+        account.withdraw(300);
+        account.withdraw(1500);
+    }
+}
+
+
+OUTPUT:
+Deposited: 500, New Balance: 1500
+Withdrawn: 300, New Balance: 1200
+Insufficient funds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class SortThread extends Thread {
+    private int[] array;
+
+    public SortThread(int[] array) {
+        this.array = array;
+    }
+
+    @Override
+    public void run() {
+        sortArray();
+    }
+
+    private void sortArray() {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[i] > array[j]) {
+                    int temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+            }
+        }
+    }
+}
+
+public class MultiThreadedSort {
+    public static void main(String[] args) {
+        int[] array = {64, 34, 25, 12, 22, 11, 90};
+
+        SortThread thread = new SortThread(array);
+        thread.start();
+
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
+        System.out.println("Sorted array: " + java.util.Arrays.toString(array));
+    }
+}
+
+
+
+OUTPUT:
+Sorted array: [11, 12, 22, 25, 34, 64, 90]
