@@ -1,0 +1,100 @@
+package DemoLABS;
+
+public class Areacalculator {
+    
+    public double area(double radius) {
+        return Math.PI * radius * radius;
+    }
+
+    
+    public double area1(double length, double width) {
+        return length * width;
+    }
+
+   
+    public double area(double base, double height) {
+        return 0.5 * base * height;
+    }
+
+    public static void main(String[] args) {
+        Areacalculator calculator = new Areacalculator();
+
+        
+        double circleRadius = 5.0;
+        double circleArea = calculator.area(circleRadius);
+        System.out.println("Area of the circle: " + circleArea);
+
+       
+        double rectangleLength = 4.0;
+        double rectangleWidth = 3.0;
+        double rectangleArea = calculator.area1(rectangleLength, rectangleWidth);
+        System.out.println("Area of the rectangle: " + rectangleArea);
+
+       
+        double triangleBase = 3.0;
+        double triangleHeight = 4.0;
+        double triangleArea = calculator.area1(triangleBase, triangleHeight);
+        System.out.println("Area of the triangle: " + triangleArea);
+    }
+}
+
+
+OUTPUT
+Area of the circle: 78.53981633974483
+Area of the rectangle: 12.0
+Area of the triangle: 12.0
+
+
+
+
+package DemoLABS;
+
+//Parent class
+class Vehicle {
+ public void displayDetails() {
+     System.out.println("This is a vehicle.");
+ }
+
+ public void sound() {
+     System.out.println("Vehicle makes a sound.");
+ }
+}
+
+class Car extends Vehicle {
+ @Override
+ public void displayDetails() {
+     System.out.println("This is a car.");
+ }
+
+ @Override
+ public void sound() {
+     System.out.println("Car break.");
+ }
+
+ public void accelerate() {
+     System.out.println("Car Speed.");
+ }
+}
+
+public class Main {
+ public static void main(String[] args) {
+     // Create a Vehicle reference and a Car object
+     Vehicle vehicle = new Car();
+
+     // Call methods using the Vehicle reference
+     vehicle.displayDetails(); // Output: This is a car.
+     vehicle.sound(); // Output: Car honks.
+
+     // To call the accelerate method, we need to downcast the Vehicle reference to a Car reference
+     Car car = (Car) vehicle;
+     car.accelerate(); // Output: Car accelerates.
+ }
+}
+
+
+OUTPUT
+This is a car.
+Car break.
+Car Speed.
+
+
