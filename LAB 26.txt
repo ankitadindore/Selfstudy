@@ -1,0 +1,100 @@
+package DemoLABS;
+
+public class StudentNAG {
+    String name;
+    int age;
+    String grade;
+
+    StudentNAG(String name, int age, String grade) {
+        this.name = name;
+        this.age = age;
+        this.grade = grade;
+    }
+
+    void displayDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Grade: " + grade);
+    }
+
+    public static void main(String[] args) {
+        StudentNAG[] students = new StudentNAG[5];
+
+        students[0] = new StudentNAG("John", 15, "9th");
+        students[1] = new StudentNAG("Jane", 16, "10th");
+        students[2] = new StudentNAG("Bob", 14, "8th");
+        students[3] = new StudentNAG("Alice", 17, "11th");
+        students[4] = new StudentNAG("Mike", 15, "9th");
+
+        for (int i = 0; i < 5; i++) {
+            students[i].displayDetails();
+            System.out.println();
+        }
+    }
+}
+
+
+
+
+
+public class Main {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5};
+        double average = calculateAverage(array);
+        System.out.println("Average: " + average);
+    }
+
+    public static double calculateAverage(int[] array) {
+        int sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+        return (double) sum / array.length;
+    }
+}
+
+
+
+
+
+
+public class Student {
+    String name;
+    int age;
+    String grade;
+
+    public Student(String name, int age, String grade) {
+        this.name = name;
+        this.age = age;
+        this.grade = grade;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student[] students = new Student[5];
+        students[0] = new Student("John", 15, "9th");
+        students[1] = new Student("Jane", 16, "10th");
+        students[2] = new Student("Bob", 14, "8th");
+        students[3] = new Student("Alice", 17, "11th");
+        students[4] = new Student("Mike", 15, "9th");
+
+        String searchName = "Jane";
+        int index = findStudentByName(students, searchName);
+
+        if (index != -1) {
+            System.out.println("Student found at index " + index);
+        } else {
+            System.out.println("Student not found");
+        }
+    }
+
+    public static int findStudentByName(Student[] students, String searchName) {
+        for (int i = 0; i < students.length; i++) {
+            if (students[i].name.equals(searchName)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+}
