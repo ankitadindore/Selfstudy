@@ -1,0 +1,76 @@
+public class DivideByZeroException {
+    public static void main(String[] args) {
+        int num1 = 10;
+        int num2 = 0;
+
+        try {
+            int result = divide(num1, num2);
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+
+    public static int divide(int num1, int num2) {
+        return num1 / num2;
+    }
+}
+
+
+
+OUTPUT:
+Error: / by zero
+
+
+
+
+
+
+
+
+import java.util.Scanner;
+
+class Student {
+    String name;
+    int rollNumber;
+    float marks;
+
+    public Student(String name, int rollNumber, float marks) {
+        this.name = name;
+        this.rollNumber = rollNumber;
+        this.marks = marks;
+    }
+
+    public void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Roll Number: " + rollNumber);
+        System.out.println("Marks: " + marks);
+    }
+}
+
+public class StudentRecords {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter name: ");
+        String name = scanner.nextLine();
+
+        System.out.print("Enter roll number: ");
+        int rollNumber = scanner.nextInt();
+
+        System.out.print("Enter marks: ");
+        float marks = scanner.nextFloat();
+
+        Student student = new Student(name, rollNumber, marks);
+        student.display();
+    }
+}
+
+
+Enter name: John Doe
+Enter roll number: 123
+Enter marks: 85.5
+Name: John Doe
+Roll Number: 123
+Marks: 85.5
+
