@@ -1,0 +1,51 @@
+public class ReverseStr {
+    public static void main(String[] args) {
+        String str = "Hello World";
+        char[] arr = str.toCharArray();
+        int left = 0;
+        int right = arr.length - 1;
+
+        while (left < right) {
+            // Swap characters
+            char temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+
+            // Move towards the center
+            left++;
+            right--;
+        }
+
+        System.out.println("Reversed string: " + new String(arr));
+    }
+}
+
+
+
+
+
+public class VowelsConsonants
+{
+    public static void main(String[] args) {
+        String str = "Hello World";
+        int vowelCount = 0;
+        int consonantCount = 0;
+
+        for (char c : str.toLowerCase().toCharArray()) {
+            if (c >= 'a' && c <= 'z') {
+                if (isVowel(c)) {
+                    vowelCount++;
+                } else {
+                    consonantCount++;
+                }
+            }
+        }
+
+        System.out.println("Vowel count: " + vowelCount);
+        System.out.println("Consonant count: " + consonantCount);
+    }
+
+    public static boolean isVowel(char c) {
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+    }
+}
