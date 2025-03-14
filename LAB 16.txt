@@ -1,0 +1,131 @@
+package DemoLABS;
+
+class Account {
+    protected double balance;
+
+    Account(double balance) {
+        this.balance = balance;
+    }
+
+    void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: " + amount);
+        } else {
+            System.out.println("Invalid deposit amount.");
+        }
+    }
+
+    void withdraw(double amount) {
+        if (amount > 0 && balance >= amount) {
+            balance -= amount;
+            System.out.println("Withdrawn: " + amount);
+        } else if (amount <= 0) {
+            System.out.println("Invalid withdrawal amount.");
+        } else {
+            System.out.println("Insufficient balance.");
+        }
+    }
+}
+
+class SavingsAccount extends Account {
+    SavingsAccount(double balance) {
+        super(balance);
+    }
+
+    void calculateInterest(double interestRate) {
+        if (interestRate >= 0) {
+            double interest = balance * interestRate / 100;
+            balance += interest;
+            System.out.println("Interest added: " + interest);
+        } else {
+            System.out.println("Invalid interest rate.");
+        }
+    }
+
+    void displayBalance() {
+        System.out.println("Current balance: " + balance);
+    }
+}
+
+public class BankingApplication {
+    public static void main(String[] args) {
+        SavingsAccount account = new SavingsAccount(1000);
+        account.deposit(500);
+        account.withdraw(200);
+        ((SavingsAccount) account).displayBalance(); // Cast account to SavingsAccount
+        account.calculateInterest(5);
+        ((SavingsAccount) account).displayBalance(); // Cast account to SavingsAccount
+    }
+}
+
+
+
+
+
+OUTPUT
+Deposited: 500.0
+Withdrawn: 200.0
+Current balance: 1300.0
+Interest added: 65.0
+Current balance: 1365.0
+
+
+
+
+
+package DemoLABS;
+
+//Parent class
+class Animal {
+ void sound() {
+     System.out.println("The animal makes a sound.");
+ }
+}
+
+//Child class
+class Dog extends Animal {
+ @Override
+ void sound() {
+     System.out.println("The dog barks.");
+ }
+}
+
+
+class Cat extends Animal {
+ @Override
+ void sound() {
+     System.out.println("The cat meows.");
+ }
+}
+
+
+class Zoo {
+ void displaySounds(Animal animal) {
+     animal.sound();
+ }
+}
+
+public class MethodOverriding {
+ public static void main(String[] args) {
+     Zoo zoo = new Zoo();
+
+     Animal animal = new Animal();
+     zoo.displaySounds(animal);
+
+     Dog dog = new Dog();
+     zoo.displaySounds(dog);
+
+     Cat cat = new Cat();
+     zoo.displaySounds(cat);
+ }
+}
+
+
+
+OUTPUT
+
+
+The animal makes a sound.
+The dog barks.
+The cat meows.
