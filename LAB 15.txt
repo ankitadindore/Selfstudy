@@ -1,0 +1,130 @@
+package DemoLABS;
+
+public class Employees {
+    private String name;
+    private int age;
+
+    public Employees(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public static void main(String[] args) {
+        Employees emp = new Employees("John", 30);
+        System.out.println("Name: " + emp.getName());
+        System.out.println("Age: " + emp.getAge());
+    }
+}
+
+
+
+
+OUTPUT
+Name: John
+Age: 30
+
+
+
+
+
+package DemoLABS;
+
+//Abstract class
+abstract class Student {
+ String name;
+ int age;
+
+ public Student(String name, int age) {
+     this.name = name;
+     this.age = age;
+ }
+
+ // Abstract method
+ public abstract void printDetails();
+}
+
+//Concrete class
+class ConcreteStudent extends Student {
+ public ConcreteStudent(String name, int age) {
+     super(name, age);
+ }
+
+ // Implement the abstract method
+ @Override
+ public void printDetails() {
+     System.out.println("Name: " + name);
+     System.out.println("Age: " + age);
+ }
+}
+
+public class AbstractClass {
+ public static void main(String[] args) {
+     // Create a ConcreteStudent object
+     ConcreteStudent student = new ConcreteStudent("Ankita", 22);
+
+     // Call the printDetails method
+     student.printDetails();
+ }
+}
+
+
+
+
+OUTPUT
+package DemoLABS;
+
+//Abstract class
+abstract class Student {
+ String name;
+ int age;
+
+ public Student(String name, int age) {
+     this.name = name;
+     this.age = age;
+ }
+
+ // Abstract method
+ public abstract void printDetails();
+}
+
+//Concrete class
+class ConcreteStudent extends Student {
+ public ConcreteStudent(String name, int age) {
+     super(name, age);
+ }
+
+ // Implement the abstract method
+ @Override
+ public void printDetails() {
+     System.out.println("Name: " + name);
+     System.out.println("Age: " + age);
+ }
+}
+
+public class AbstractClass {
+ public static void main(String[] args) {
+     // Create a ConcreteStudent object
+     ConcreteStudent student = new ConcreteStudent("Ankita", 22);
+
+     // Call the printDetails method
+     student.printDetails();
+ }
+}
+
+
