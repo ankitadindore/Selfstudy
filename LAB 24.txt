@@ -1,0 +1,75 @@
+public class ArraySorting {
+    public static void main(String[] args) {
+        // Initialize an array of integers
+        int[] array = {5, 2, 8, 1, 9};
+
+        // Print the original array
+        System.out.println("Original array:");
+        printArray(array);
+
+        // Sort the array using bubble sort
+        bubbleSort(array);
+
+        // Print the sorted array
+        System.out.println("Sorted array:");
+        printArray(array);
+    }
+
+    // Method to print the array
+    public static void printArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+    }
+
+    // Method to sort the array using bubble sort
+    public static void bubbleSort(int[] array) {
+        int n = array.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (array[j] > array[j + 1]) {
+                    // Swap array[j] and array[j + 1]
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+public class BiggestNumber {
+    public static void main(String[] args) {
+        // Initialize an array of integers
+        int[] array = {5, 2, 8, 1, 9};
+
+        // Find the biggest number in the array
+        int biggest = findBiggest(array);
+
+        // Print the biggest number
+        System.out.println("The biggest number in the array is: " + biggest);
+    }
+
+    // Method to find the biggest number in the array
+    public static int findBiggest(int[] array) {
+        int biggest = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] > biggest) {
+                biggest = array[i];
+            }
+        }
+        return biggest;
+    }
+}
+
