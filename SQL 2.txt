@@ -1,0 +1,145 @@
+SELECT s.student_name, c.course_name
+FROM students s
+JOIN courses c ON s.course_id = c.course_id;
+
+
+| student_name    | course_name |
+|-------------------|-------------|
+| John Smith       | Math        |
+| Robert Johnson   | Math        |
+| Jane Doe         | History     |
+| Michael Brown    | History     |
+| Lisa Wang        | Science     |
+
+
+
+
+SELECT c.course_name, COUNT(s.student_id) AS total_students
+FROM students s
+JOIN courses c ON s.course_id = c.course_id
+GROUP BY c.course_name;
+
+| course_name | total_students |
+|--------------|-----------------|
+| Math         | 2               |
+| History      | 2               |
+| Science      | 1               |
+
+
+
+
+SELECT student_name
+FROM students
+WHERE age > 21;
+
+| student_name    |
+|-------------------|
+| John Smith       |
+| Robert Johnson   |
+| Michael Brown    |
+
+
+SELECT c.course_name, AVG(s.age) AS average_age
+FROM students s
+JOIN courses c ON s.course_id = c.course_id
+GROUP BY c.course_name;
+
+| course_name | average_age |
+|--------------|-------------|
+| Math         | 23.5        |
+| History      | 26.0        |
+| Science      | 21.0        |
+
+
+
+SELECT c.course_name, COUNT(s.student_id) AS total_students
+FROM students s
+JOIN courses c ON s.course_id = c.course_id
+GROUP BY c.course_name
+ORDER BY total_students DESC
+LIMIT 1;
+
+| course_name | total_students |
+|--------------|-----------------|
+| Math         | 2               |
+| History      | 2               |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT s.student_name, c.course_name
+FROM students s
+JOIN courses c ON s.course_id = c.course_id;
+
+| student_name    | course_name |
+|-------------------|-------------|
+| John Smith       | Math        |
+| Robert Johnson   | Math        |
+| Jane Doe         | History     |
+| Michael Brown    | History     |
+| Lisa Wang        | Science     |
+
+
+
+SELECT c.course_name, COUNT(s.student_id) AS total_students
+FROM students s
+JOIN courses c ON s.course_id = c.course_id
+GROUP BY c.course_name;
+
+| course_name | total_students |
+|--------------|-----------------|
+| Math         | 2               |
+| History      | 2               |
+| Science      | 1               |
+
+
+
+SELECT student_name
+FROM students
+WHERE age > 21;
+
+| student_name    |
+|-------------------|
+| John Smith       |
+| Robert Johnson   |
+| Michael Brown    |
+
+
+
+SELECT c.course_name, AVG(s.age) AS average_age
+FROM students s
+JOIN courses c ON s.course_id = c.course_id
+GROUP BY c.course_name;
+
+| course_name | average_age |
+|--------------|-------------|
+| Math         | 23.5        |
+| History      | 26.0        |
+| Science      | 21.0        |
+
+
+SELECT c.course_name, COUNT(s.student_id) AS total_students
+FROM students s
+JOIN courses c ON s.course_id = c.course_id
+GROUP BY c.course_name
+ORDER BY total_students DESC
+LIMIT 1;
+
+| course_name | total_students |
+|--------------|-----------------|
+| Math         | 2               |
+| History      | 2               |
