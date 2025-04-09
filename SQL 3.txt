@@ -1,0 +1,194 @@
+CREATE TABLE Customer (
+  Customer_id INT,
+  Customer_name VARCHAR(50),
+  Customer_age INT,
+  Customer_City VARCHAR(50),
+  Customer_order_amount INT
+);
+
+
+
+INSERT INTO Customer (Customer_id, Customer_name, Customer_age, Customer_City, Customer_order_amount)
+VALUES
+(101, 'Amar', 23, 'Bhopal', 25000),
+(102, 'Rohan', 25, 'Bhopal', 23000),
+(103, 'Sohan', 23, 'UP', 25000),
+(104, 'Kiran', 28, 'UP', 21000),
+(105, 'Raj', 28, 'Ajmer', 22000),
+(106, 'Shiv', 28, 'Ajmer', 29000);
+
+
+SELECT *
+FROM Customer
+ORDER BY Customer_age ASC;
+
+
+
+
+| Customer_id | Customer_name | Customer_age | Customer_City | Customer_order_amount |
+|--------------|----------------|--------------|---------------|------------------------|
+| 101          | Amar           | 23           | Bhopal       | 25000                  |
+| 103          | Sohan          | 23           | UP           | 25000                  |
+| 102          | Rohan          | 25           | Bhopal       | 23000                  |
+| 104          | Kiran          | 28           | UP           | 21000                  |
+| 105          | Raj            | 28           | Ajmer       | 22000                  |
+| 106          | Shiv           | 28           | Ajmer       | 29000                  |
+
+
+
+SELECT *
+FROM Customer
+ORDER BY Customer_age DESC;
+
+| Customer_id | Customer_name | Customer_age | Customer_City | Customer_order_amount |
+|--------------|----------------|--------------|---------------|------------------------|
+| 104          | Kiran          | 28           | UP           | 21000                  |
+| 105          | Raj            | 28           | Ajmer       | 22000                  |
+| 106          | Shiv           | 28           | Ajmer       | 29000                  |
+| 102          | Rohan          | 25           | Bhopal       | 23000                  |
+| 101          | Amar           | 23           | Bhopal       | 25000                  |
+| 103          | Sohan          | 23           | UP           | 25000                  |
+
+
+
+
+SELECT *
+FROM Customer
+ORDER BY Customer_order_amount ASC;
+
+| Customer_id | Customer_name | Customer_age | Customer_City | Customer_order_amount |
+|--------------|----------------|--------------|---------------|------------------------|
+| 104          | Kiran          | 28           | UP           | 21000                  |
+| 105          | Raj            | 28           | Ajmer       | 22000                  |
+| 102          | Rohan          | 25           | Bhopal       | 23000                  |
+| 101          | Amar           | 23           | Bhopal       | 25000                  |
+| 103          | Sohan          | 23           | UP           | 25000                  |
+| 106          | Shiv           | 28           | Ajmer       | 29000                  |
+
+
+
+SELECT *
+FROM Customer
+ORDER BY Customer_order_amount DESC;
+
+
+| Customer_id | Customer_name | Customer_age | Customer_City | Customer_order_amount |
+|--------------|----------------|--------------|---------------|------------------------|
+| 106          | Shiv           | 28           | Ajmer       | 29000                  |
+| 101          | Amar           | 23           | Bhopal       | 25000                  |
+| 103          | Sohan          | 23           | UP           | 25000                  |
+| 102          | Rohan          | 25           | Bhopal       | 23000                  |
+| 105          | Raj            | 28           | Ajmer       | 22000                  |
+| 104          | Kiran          | 28           | UP           | 21000                  |
+
+
+
+SELECT Customer_City, Customer_age, COUNT(*) AS Count
+FROM Customer
+GROUP BY Customer_City, Customer_age;
+
+| Customer_City | Customer_age | Count |
+|-----------------|--------------|-------|
+| Ajmer          |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE TABLE Employee (
+  Employee_id INT,
+  Employee_name VARCHAR(50),
+  Employee_salary INT
+);
+
+
+INSERT INTO Employee (Employee_id, Employee_name, Employee_salary)
+VALUES
+(101, 'Akshay', 25000),
+(102, 'Amar', 30000),
+(103, 'Sheetal', 28000),
+(104, 'Rohan', 20000),
+(105, 'Karan', 25000),
+(106, 'Suresh', 25000),
+(107, 'Ravi', 28000);
+
+
+
+UPDATE Employee
+SET Employee_salary = 30000
+WHERE Employee_name = 'Sheetal';
+
+
+
+SELECT *
+FROM Employee;
+
+
+| Employee_id | Employee_name | Employee_salary |
+|--------------|---------------|-----------------|
+| 101          | Akshay       | 25000           |
+| 102          | Amar         | 30000           |
+| 103          | Sheetal      | 30000           |
+| 104          | Rohan        | 20000           |
+| 105          | Karan        | 25000           |
+| 106          | Suresh       | 25000           |
+| 107          | Ravi         | 28000           |
+
+
+
+
+SELECT *
+FROM Employee
+WHERE Employee_salary >= 25000;
+
+| Employee_id | Employee_name | Employee_salary |
+|--------------|---------------|-----------------|
+| 101          | Akshay       | 25000           |
+| 102          | Amar         | 30000           |
+| 103          | Sheetal      | 30000           |
+| 105          | Karan        | 25000           |
+| 106          | Suresh       | 25000           |
+| 107          | Ravi         | 28000           |
+
+
+
+SELECT *
+FROM Employee
+ORDER BY Employee_salary ASC;
+
+| Employee_id | Employee_name | Employee_salary |
+|--------------|---------------|-----------------|
+| 104          | Rohan        | 20000           |
+| 101          | Akshay       | 25000           |
+| 105          | Karan        | 25000           |
+| 106          | Suresh       | 25000           |
+| 107          | Ravi         | 28000           |
+| 103          | Sheetal      | 30000           |
+| 102          | Amar         | 30000           |
+
+
+
+SELECT *
+FROM Employee
+ORDER BY Employee_salary DESC;
+
+| Employee_id | Employee_name | Employee_salary |
+|--------------|---------------|-----------------|
+| 102          | Amar         | 30000           |
+| 103          | Sheetal      | 30000           |
+| 107          | Ravi         | 28000           |
+| 101          | Akshay       | 25000           |
+| 105          | Karan        | 25000           |
+| 106          | Suresh       | 25000           |
+| 104          | Rohan        | 20000           |
