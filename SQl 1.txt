@@ -1,0 +1,208 @@
+Task a
+CREATE TABLE Student (
+  STUDENT_ID INT PRIMARY KEY,
+  FIRST_NAME VARCHAR(255),
+  LAST_NAME VARCHAR(255),
+  PHONE_NUMBER VARCHAR(20),
+  MARKS DECIMAL(5,2),
+  COURSE_ID INT
+);
+
+
+Task b
+CREATE TABLE Course (
+  COURSE_ID INT PRIMARY KEY,
+  COURSE_NAME VARCHAR(255)
+);
+
+
+Task c
+INSERT INTO Course (COURSE_ID, COURSE_NAME)
+VALUES
+(1, 'Bachelor of Technology'),
+(2, 'Bachelor of Commerce'),
+(3, 'Bachelor of Arts'),
+(4, 'Bachelor of Science');
+
+INSERT INTO Student (STUDENT_ID, FIRST_NAME, LAST_NAME, PHONE_NUMBER, MARKS, COURSE_ID)
+VALUES
+(1, 'Rohan', 'Sharma', '9999999999', 85.00, 1),
+(2, 'Aisha', 'Khan', '8888888888', 90.00, 1),
+(3, 'Karan', 'Jain', '7777777777', 78.00, 2),
+(4, 'Priya', 'Gupta', '6666666666', 92.00, 2),
+(5, 'Siddharth', 'Mishra', '5555555555', 88.00, 3),
+(6, 'Riya', 'Singh', '4444444444', 76.00, 3),
+(7, 'Aryan', 'Rajput', '3333333333', 95.00, 4),
+(8, 'Ananya', 'Chopra', '2222222222', 89.00, 4);
+
+
+Task d
+SELECT COURSE_ID, COUNT(STUDENT_ID) AS NUMBER_OF_STUDENTS
+FROM Student
+GROUP BY COURSE_ID;
+
+
+Output:
+
+| COURSE_ID | NUMBER_OF_STUDENTS |
+| --- | --- |
+| 1 | 2 |
+| 2 | 2 |
+| 3 | 2 |
+| 4 | 2 |
+
+Task f
+SELECT S.FIRST_NAME, S.LAST_NAME, C.COURSE_NAME, S.MARKS
+FROM Student S
+JOIN Course C ON S.COURSE_ID = C.COURSE_ID;
+
+
+Output:
+
+| FIRST_NAME | LAST_NAME | COURSE_NAME | MARKS |
+| --- | --- | --- | --- |
+| Rohan | Sharma | Bachelor of Technology | 85.00 |
+| Aisha | Khan | Bachelor of Technology | 90.00 |
+| Karan | Jain | Bachelor of Commerce | 78.00 |
+| Priya | Gupta | Bachelor of Commerce | 92.00 |
+| Siddharth | Mishra | Bachelor of Arts | 88.00 |
+| Riya | Singh | Bachelor of Arts | 76.00 |
+| Aryan | Rajput | Bachelor of Science | 95.00 |
+| Ananya | Chopra | Bachelor of Science | 89.00 |
+
+Task g
+
+SELECT C.COURSE_NAME, AVG(S.MARKS) AS AVERAGE_MARKS
+FROM Student S
+JOIN Course C ON S.COURSE_ID = C.COURSE_ID
+GROUP BY C.COURSE_NAME;
+
+
+Output:
+
+| COURSE_NAME | AVERAGE_MARKS |
+| --- | --- |
+| Bachelor of Technology | 87.50 |
+| Bachelor of Commerce | 85.00 |
+| Bachelor of Arts | 82.00 |
+| Bachelor of Science | 92.00 |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Task a
+CREATE TABLE HEALTH_CARE_WORKERS (
+  EMPLOYEE_ID INT PRIMARY KEY,
+  FIRST_NAME VARCHAR(255),
+  LAST_NAME VARCHAR(255),
+  EMAIL VARCHAR(255),
+  PHONE_NUMBER VARCHAR(20),
+  HIRE_DATE DATE,
+  SALARY DECIMAL(10,2),
+  DESIGNATION VARCHAR(255)
+);
+
+
+Task b
+CREATE TABLE PATIENT (
+  PATIENT_ID INT PRIMARY KEY,
+  NAME VARCHAR(255),
+  PHONE_NUMBER VARCHAR(20)
+);
+
+
+Task c
+INSERT INTO HEALTH_CARE_WORKERS (EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, PHONE_NUMBER, HIRE_DATE, SALARY, DESIGNATION)
+VALUES
+(1, 'Rohan', 'Sharma', 'rohan.sharma@example.com', '9999999999', '2020-01-01', 30000.00, 'Doctor'),
+(2, 'Priya', 'Gupta', 'priya.gupta@example.com', '8888888888', '2020-02-01', 25000.00, 'Nurse'),
+(3, 'Karan', 'Jain', 'karan.jain@example.com', '7777777777', '2020-03-01', 20000.00, 'Lab Technician'),
+(4, 'Aisha', 'Khan', 'aisha.khan@example.com', '6666666666', '2020-04-01', 28000.00, 'Doctor'),
+(5, 'Siddharth', 'Mishra', 'siddharth.mishra@example.com', '5555555555', '2020-05-01', 22000.00, 'Nurse'),
+(6, 'Riya', 'Singh', 'riya.singh@example.com', '4444444444', '2020-06-01', 30000.00, 'Doctor'),
+(7, 'Aryan', 'Rajput', 'aryan.rajput@example.com', '3333333333', '2020-07-01', 26000.00, 'Lab Technician'),
+(8, 'Ananya', 'Chopra', 'ananya.chopra@example.com', '2222222222', '2020-08-01', 24000.00, 'Nurse'),
+(9, 'Ishaan', 'Khanna', 'ishaan.khanna@example.com', '1111111111', '2020-09-01', 32000.00, 'Doctor'),
+(10, 'Tanmay', 'Goyal', 'tanmay.goyal@example.com', '0000000000', '2020-10-01', 20000.00, 'Lab Technician');
+
+
+Task d
+SELECT FIRST_NAME, LAST_NAME, DESIGNATION, SALARY
+FROM HEALTH_CARE_WORKERS;
+
+
+Output:
+
+| FIRST_NAME | LAST_NAME | DESIGNATION | SALARY |
+| --- | --- | --- | --- |
+| Rohan | Sharma | Doctor | 30000.00 |
+| Priya | Gupta | Nurse | 25000.00 |
+| Karan | Jain | Lab Technician | 20000.00 |
+| Aisha | Khan | Doctor | 28000.00 |
+| Siddharth | Mishra | Nurse | 22000.00 |
+| Riya | Singh | Doctor | 30000.00 |
+| Aryan | Rajput | Lab Technician | 26000.00 |
+| Ananya | Chopra | Nurse | 24000.00 |
+| Ishaan | Khanna | Doctor | 32000.00 |
+| Tanmay | Goyal | Lab Technician | 20000.00 |
+
+Task e
+
+SELECT DESIGNATION, COUNT(EMPLOYEE_ID) AS NUMBER_OF_EMPLOYEES
+FROM HEALTH_CARE_WORKERS
+GROUP BY DESIGNATION;
+
+
+Output:
+
+| DESIGNATION | NUMBER_OF_EMPLOYEES |
+| --- | --- |
+| Doctor | 4 |
+| Nurse | 3 |
+| Lab Technician | 3 |
+
+Task f
+
+SELECT FIRST_NAME, LAST_NAME
+FROM HEALTH_CARE_WORKERS
+WHERE SALARY > 25000;
+
+
+Output:
+
+| FIRST_NAME | LAST_NAME |
+| --- | --- |
+| Rohan | Sharma |
+| Aisha | Khan |
+| Riya | Singh |
+| Aryan | Rajput |
+| Ishaan |
