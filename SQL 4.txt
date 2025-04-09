@@ -1,0 +1,143 @@
+CREATE TABLE emp_details (
+  emp_id INT,
+  emp_name VARCHAR(50),
+  job_name VARCHAR(50),
+  manager_id INT,
+  hire_date DATE,
+  salary DECIMAL(10, 2),
+  comission DECIMAL(10, 2),
+  dept_id INT
+);
+
+
+
+INSERT INTO emp_details (emp_id, emp_name, job_name, manager_id, hire_date, salary, comission, dept_id)
+VALUES
+(68319, 'Kayling', 'President', NULL, '1991-11-18', 6000.00, NULL, 1001),
+(66928, 'Blaze', 'Manager', 68319, '1991-05-01', 2750.00, NULL, 3001),
+(67832, 'Clare', 'Manager', 68319, '1991-06-09', 2550.00, NULL, 1001),
+(65646, 'Jonas', 'Manager', 68319, '1991-04-02', 2957.00, NULL, 2001),
+(67858, 'Scarlet', 'Analyst', 65646, '1997-04-19', 3100.00, NULL, 2001),
+(9602, 'Frank', 'Analyst', 65646, '1991-12-03', 3100.00, NULL, 2001);
+
+
+
+
+SELECT *
+FROM emp_details
+WHERE salary BETWEEN 2500 AND 3500;
+
+
+| emp_id | emp_name | job_name | manager_id | hire_date  | salary | comission | dept_id |
+|---------|-----------|----------|-------------|-------------|--------|-----------|---------|
+| 66928  | Blaze     | Manager  | 68319       | 1991-05-01 | 2750.0 | NULL      | 3001   |
+| 67832  | Clare     | Manager  | 68319       | 1991-06-09 | 2550.0 | NULL      | 1001   |
+| 65646  | Jonas     | Manager  | 68319       | 1991-04-02 | 2957.0 | NULL      | 2001   |
+| 67858  | Scarlet   | Analyst  | 65646       | 1997-04-19 | 3100.0 | NULL      | 2001   |
+| 9602    | Frank     | Analyst  | 65646       | 1991-12-03 | 3100.0 | NULL      | 2001   |
+
+
+
+SELECT *
+FROM emp_details
+WHERE CAST(salary AS CHAR) LIKE '2%';
+
+
+| emp_id | emp_name | job_name | manager_id | hire_date  | salary | comission | dept_id |
+|---------|-----------|----------|-------------|-------------|--------|-----------|---------|
+| 66928  | Blaze     | Manager  | 68319       | 1991-05-01 | 2750.0 | NULL      | 3001   |
+| 67832  | Clare     | Manager  | 68319       | 1991-06-09 | 2550.0 | NULL      | 1001   |
+
+
+
+
+
+SELECT *
+FROM emp_details
+WHERE CAST(salary AS CHAR) LIKE '%2%' OR CAST(salary AS CHAR) LIKE '%3%';
+
+
+| emp_id | emp_name | job_name | manager_id | hire_date  | salary | comission | dept_id |
+|---------|-----------|----------|-------------|-------------|--------|-----------|---------|
+| 66928  | Blaze     | Manager  | 68319       | 1991-05-01 | 2750.0 | NULL      | 3001   |
+| 67832
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE TABLE custdetails (
+  custid INT,
+  custname VARCHAR(50),
+  city VARCHAR(50),
+  postalcode VARCHAR(50),
+  country VARCHAR(50)
+);
+
+ 
+INSERT INTO custdetails (custid, custname, city, postalcode, country)
+VALUES
+(1, 'Alfred', 'Berlin', '12209', 'Germany'),
+(2, 'Ana', 'Mexico', '05021', 'Mexico'),
+(3, 'Antanio', 'Mexico', '05023', 'Mexico'),
+(4, 'Harry', 'London', 'WA11DP', 'UK'),
+(5, 'Sierra', 'Lulea', 'S95822', 'Sweden');
+
+
+
+SELECT *
+FROM custdetails
+WHERE country = 'Mexico';
+
+| custid | custname | city   | postalcode | country |
+|---------|-----------|--------|-------------|---------|
+| 2       | Ana       | Mexico | 05021       | Mexico  |
+| 3       | Antanio   | Mexico | 05023       | Mexico  |
+
+
+
+SELECT *
+FROM custdetails
+ORDER BY country ASC;
+
+
+| custid | custname | city   | postalcode | country |
+|---------|-----------|--------|-------------|---------|
+| 4       | Harry     | London | WA11DP      | UK      |
+| 1       | Alfred    | Berlin | 12209       | Germany |
+| 2       | Ana       | Mexico | 05021       | Mexico  |
+| 3       | Antanio   | Mexico | 05023       | Mexico  |
+| 5       | Sierra    | Lulea  | S95822      | Sweden  |
+
+
+
+SELECT COUNT(*) AS count
+FROM custdetails
+WHERE country = 'Mexico';
+
+| count |
+|--------|
+| 2      |
+
+
+
+
+SELECT *
+FROM custdetails
+GROUP BY country
+HAVING COUNT(*) > 1
+ORDER BY country DESC;
+
+| custid | custname | city   | postalcode | country |
+|---------|-----------|--------|-------------|---------|
+| 2       | Ana       | Mexico | 05021       | Mexico  |
+| 3       | Antanio   | Mexico | 05023       | Mexico  |
